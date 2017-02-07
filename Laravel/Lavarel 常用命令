@@ -1,0 +1,26 @@
+Lavarel安装
+composer create-project laravel/laravel outers 创建lavarel项目到outers下
+
+
+Lavarel 常用命令
+
+创建controller
+php artisan make:controller ArticleController --plain(--plain表示生成一个)
+
+创建表文件
+php artisan make:migration create_articles_table --create=articles
+
+执行表文件
+php artisan migrate
+
+创建一个model
+php artisan make:model Article
+
+添加bootstrap
+composer require "twbs/bootstrap"
+
+更新
+composer update
+
+生成表单验证
+php artisan make:request StoreArticleRequest
