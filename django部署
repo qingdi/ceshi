@@ -1,0 +1,19 @@
+uwsgi
+1，安装nginx
+2，安装uwsgi 
+   pip3 install uwsgi
+3，原理：
+   the web client <-> the web server(nginx) <-> the socket <-> uwsgi <-> Django
+4，处理静态文件
+	settings.py配置
+		STATIC_ROOT = os.path.join(BASE_DIR, "static/")
+	执行命令：
+		 python3 manage.py collectstatic 
+5，配置 nginx
+5，执行：
+	uwsgi --socket transadmin.sock --module transadmin.wsgi --chmod-socket=666 --wsgi-file /Users/houziqiang/www/pythonapp/transadmin/transadmin/wsgi.py
+
+	uwsgi --socket trans.sock --module trans.wsgi --chmod-socket=666 --wsgi-file /Users/houziqiang/www/pythonapp/trans/trans/wsgi.py
+
+参考
+http://www.jianshu.com/p/e6ff4a28ab5a
